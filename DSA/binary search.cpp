@@ -1,30 +1,23 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
-int prac(int ar[],int n,int k){
-int low=0,high=n,o=0;
-while(low<n){
-	int mid=(low+high)/2;
-	if(ar[mid]==k){
-		cout<<mid;
-		k=1;
-		break;
-	}
-	else if(ar[mid]<k){
-		low=mid+1;
-		
-		
-	}
-	else
-	high=mid-1;
-}
-if(o==0)
-cout<<"not perggu";
-	
-	
-}
-
 int main(){
-	int ar[10]={1,3,7,45,32,65,63,1,7,76};
-	prac(ar,10,650);
-	
-}
+	int key=5;
+	int k=0;
+	int arr[5]={1,3,5,6,8};
+  int l=0,h=5-1;
+  while(l<h){
+  	int mid=(l+h)/2;
+  	if(arr[mid]==key){
+  		cout<<"present"<<endl;
+  		k=1;
+  		break;
+	  }
+	  else if(arr[mid]>key){
+	  	h=mid-1;
+	  }
+	  else
+	  l=mid+1;
+  }
+  if(k==0)
+	cout<<"The key is not present"<<endl;
+	}
