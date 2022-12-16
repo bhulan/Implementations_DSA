@@ -1,26 +1,19 @@
 #include<iostream>
-#include<bits/stdc++.h>
 using namespace std;
 int main(){
-	int n,target,tem=0;
-	cin>>n;
-	int arr[n];
-	for(int i=0;i<n;i++){
-		cin>>arr[i];
-		
+	int arr[5]={1,5,3,7,2};
+	int c=1;
+	while(c<5){
+		for(int i=0;i<5-c;i++){
+			if(arr[i]>arr[i+1]){
+				swap(arr[i],arr[i+1]);
+			}
+		}
+		c++;
 	}
-	for(int i=1;i<n;i++){
-	int j=i-1;
-	int key=arr[i];
-	while(j>=0 && arr[j]>key){
-		arr[j+1]=arr[j];
-		j--;
-		
-	}
-	arr[j+1]=key;
-}
-		for(int i=0;i<n;i++){
+	for(int i=0;i<5;i++){
 		cout<<arr[i]<<" ";
-		
 	}
 }
+
+
