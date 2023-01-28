@@ -5,7 +5,7 @@ class Solution
 	    vis[node]=1;
 	    for(auto it:adj[node]){
 	        if(!vis[it]){
-	            solve(node,vis,st,adj);
+	            solve(it,vis,st,adj);
 	        }
 	    }
 	    st.push(node);
