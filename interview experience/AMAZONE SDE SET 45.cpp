@@ -38,3 +38,27 @@ public:
         return false;
     }
 };----------------------------------------------------------
+  Longest Substring Without Repeating Characters
+      
+      
+      class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+      int st=0,end=0,ans=0,p=0;
+      set<char>sett;
+      while(st<s.size()){
+          auto it=sett.find(s[st]);
+          if(it==sett.end()){
+              sett.insert(s[st]);
+              p=st-end+1;
+              ans=max(p,ans);
+              st++;
+          }
+          else{
+              sett.erase(s[end]);
+              end++;
+          }
+      }  
+      return ans; 
+    }
+}; 
